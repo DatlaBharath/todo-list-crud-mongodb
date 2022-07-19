@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit List Item</title>
+    <link rel="stylesheet" href="/editStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="appcontainer">
+
+        <h1>Todo List</h1>
+        
+        <!--Looping through each tasks in the TodoTasks object which we get from the DB-->
+        <!--Rendering title and content using the object 'details'-->
+
+        <% TodoTasks.forEach(details => { %>
+            <!--Bringing innput boxes for the task which we want to edit-->
+            <% if (details._id == TaskId) 
+            { %>
+                <li class="todo-item-details">
+                    <form action="/edit/<%= details._id %>" method="POST" class="todo-inputs">
+                        <!--Title-->
+                        <input type="text" name="title" value="<%= details.title %>">
+                        <!--Content-->
+                        <textarea name="content" cols="30" rows="7"><%= details.content %></textarea>
+
+                        <div class="BtnContainer">
+                            <!--Confirm button-->
+                            <button type="submit" id="confirmBtn">Confirm</button>
+                            <!--Cancel button-->
+                            <button id="cancelBtn">
+                                <a href="/">Cancel</a>
+                            </button>
+                        </div>
+                    </form>
+                </li>
+            <% } %>
+        <% }) %>
+
+    </div> 
+</body>
+</html>

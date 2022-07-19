@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/indexStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="appcontainer">
+
+        <h1>Todo List</h1>
+
+        <form action="/" method="POST" class="todo-inputs">
+            <!--Title-->
+            <input type="text" name="title" placeholder="Title">
+            <!--Content-->
+            <textarea name="content" cols="30" rows="8" placeholder="Content"></textarea>
+            <!--Submit button-->
+            <button type="submit" id="submitBtn">
+                <span class="fa-solid fa-plus">Add Task</span>
+            </button>
+        </form>
+
+        
+        <!--Looping through each tasks in the TodoTasks object which we get from the DB-->
+        <!--Rendering title and content using the object 'details'-->
+        <ul class="added-tasks">
+            <% TodoTasks.forEach(details => {%>
+                <li class="todo-item-details">
+
+                    <div>
+                        <!--Title-->
+                        <span class="todo-item-title">
+                            <b><%= details.title %> :</b>
+                        </span>
+                        <!--Content-->
+                        <span class="todo-item-content">
+                            <%= details.content %>
+                        </span>
+                    </div>
+
+                    <div>
+                        <!--Edit Button-->
+                        <a href="/edit/<%= details._id %>" id="editBtn">
+                            <span class="fa-solid fa-pen"></span>
+                        </a>
+                        <!--Delete Button-->
+                        <a href="/delete/<%= details._id %>" id="deleteBtn">
+                            <span class="fa-solid fa-trash"></span>
+                        </a>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(to right, #b7f8db 0%, #50a7c2 100%);
+}
+html {
+    font-size: 10px;
+}
+/*-----------------------------------------------------------------------------------------------------*/
+
+/* Full App Container */
+.appcontainer {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+/*-----------------------------------------------------------------------------------------------------*/
+
+/* App Title */
+h1 {
+    color:black;
+    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 1px black;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+}
+/*-----------------------------------------------------------------------------------------------------*/
+
+/* Input Fields */
+.todo-inputs {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+input, textarea {
+    width: 60rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px black;
+}
+/*-----------------------------------------------------------------------------------------------------*/
+
+/* Buttons Container */
+.BtnContainer {
+    /* border: 2px solid red; */
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Confirm Button */
+#confirmBtn {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: white;
+    background-color: rgb(0, 180, 0);
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px rgb(80, 80, 80);
+}
+#confirmBtn:hover {
+    background-color: rgb(0, 200, 0);
+    font-size: 1.7rem;
+    box-shadow: 3px 3px 8px rgb(80, 80, 80);
+}
+
+/* Cancel Button */
+#cancelBtn {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: rgb(255, 70, 70);
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px rgb(80, 80, 80);
+}
+#cancelBtn:hover {
+    background-color: red;
+    font-size: 1.7rem;
+    box-shadow: 3px 3px 8px rgb(80, 80, 80);
+}
+#cancelBtn a {
+    color: white;
+    text-decoration: none;
+}
+/*-----------------------------------------------------------------------------------------------------*/
+
+                                       /* <---MEDIA QUERIES---> */
+
+@media screen and (min-width: 160px) and (max-width: 200px) 
+{
+    html {
+        font-size: 2.5px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 359px) 
+{
+    html {
+        font-size: 5px;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 374px) 
+{
+    html {
+        font-size: 5.5px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 389px) 
+{
+    html {
+        font-size: 5.8px;
+    }
+}
+
+@media screen and (min-width: 390px) and (max-width: 409px) 
+{
+    html {
+        font-size: 6px;
+    }
+}
+
+@media screen and (min-width: 410px) and (max-width: 425px) 
+{
+    html {
+        font-size: 6.5px;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 450px) 
+{
+    html {
+        font-size: 6.8px;
+    }
+}
+/*-----------------------------------------------------------------------------------------------------*/
